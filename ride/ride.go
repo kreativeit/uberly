@@ -8,7 +8,7 @@ import (
 type Ride struct {
 	RideId    string    `json:"rideId"`
 	RiderId   string    `json:"riderId"`
-	DriverId  string    `json:"driverId"`
+	DriverId  string    `json:"driverId,omitempty"`
 	Status    string    `json:"status"`
 	Location  Location  `json:"location"`
 	CreatedAt time.Time `json:"createdAt"`
