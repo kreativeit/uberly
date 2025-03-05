@@ -6,19 +6,20 @@ import (
 )
 
 type Ride struct {
-	RideId    string
-	RiderId   string
-	DriverId  string
-	Status    string
-	Location  Location
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	RideId    string    `json:"rideId"`
+	RiderId   string    `json:"riderId"`
+	DriverId  string    `json:"driverId"`
+	Status    string    `json:"status"`
+	Location  Location  `json:"location"`
+	CreatedAt time.Time `json:"createdAt"`
+	UpdatedAt time.Time `json:"updatedAt"`
 
-	Events chan<- any
+	Events chan<- any `json:"-"`
 }
 
 type Location struct {
-	Latitude, Longitude float64
+	Latitude  float64 `json:"lat"`
+	Longitude float64 `json:"long"`
 }
 
 func (r *Ride) AssignDriver(driverId string) error {
